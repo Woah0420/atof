@@ -2,10 +2,10 @@
 
 double lex_atof(char *str) {
     double value = 0, decimal = 1;
-    unsigned char negative = 0, dec = 0;
+    unsigned char sign = 0, dec = 0;
 
-    if (*str == '+' && *str++);
-    if (*str == '-' && *str++) negative = 1;
+    if (*str == '+') str++;
+    if (*str == '-') { sign = 1; str++; }
 
     while (*str) {
         if (isdigit(*str)) {
@@ -17,5 +17,5 @@ double lex_atof(char *str) {
         str++;
     }
 
-    return (negative) ? -(value / decimal) : (value / decimal);
+    return (!sign) ? (value / decimal) : -(value / decimal);
 }
