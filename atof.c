@@ -14,6 +14,8 @@ double lex_atof(char *str) {
         } 
         else if (*str == '.')
             dec = 1;
+        else 
+            break;
         str++;
     }
 
