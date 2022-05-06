@@ -1,6 +1,6 @@
 #include <ctype.h>
 
-double lex_atof(char *str) {
+double atof(char *str) {
     double value = 0, decimal = 1;
     unsigned char sign = 0, dec = 0;
 
